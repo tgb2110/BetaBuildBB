@@ -9,6 +9,7 @@
 #import "BBAllMeetupsTableViewController.h"
 #import "BBMeetupCell.h"
 #import "BBMeetupLocation.h"
+#import "BBMapLocationViewController.h"
 
 @interface BBAllMeetupsTableViewController ()
 
@@ -95,6 +96,13 @@
     return 171;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BBMeetupCell *cell = (BBMeetupCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    [self performSegueWithIdentifier:@"locationSegue" sender:cell];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -133,15 +141,24 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    BBMapLocationViewController *newVC = segue.destinationViewController;
+    
+    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+    
+    PFObject *currentObject = self.meetupsArray[ip.row];
+    
+    BBMeetupLocation *locationTobeDisplayed = [[BBMeetupLocation alloc]
+                                               initWithMeetingName:currentObject[@"meetingName"]
+                                               withLocationName:currentObject[@"locationName"]
+                                               withStartDate:currentObject[@"startDate"]
+                                               withEndDate:currentObject[@"endDate"]
+                                               withLatidue:currentObject[@"latitudeValue"]
+                                               withLongitude:currentObject[@"longitudeValue"]];
+    
+    newVC.locationToBeParsed = locationTobeDisplayed;
 }
-*/
 
 @end

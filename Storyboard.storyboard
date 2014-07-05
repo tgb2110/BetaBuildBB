@@ -74,13 +74,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="171" id="1OZ-xz-m6W">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="basicCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="basicCell" rowHeight="171" id="1OZ-xz-m6W">
                                 <rect key="frame" x="0.0" y="86" width="320" height="171"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1OZ-xz-m6W" id="Zrk-mz-QVm">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="0o0-PC-B36" kind="push" identifier="locationSegue" id="DQq-qb-Ch3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -93,6 +96,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TaI-eu-64h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173" y="255"/>
+        </scene>
+        <!--Map Location View Controller-->
+        <scene sceneID="rqz-Ll-hGS">
+            <objects>
+                <viewController id="0o0-PC-B36" customClass="BBMapLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a4U-t5-eFY"/>
+                        <viewControllerLayoutGuide type="bottom" id="LAW-kP-VHA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rlb-wL-V3o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fev-90-Eu7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iiq-Na-SXw"/>
+                    <connections>
+                        <outlet property="mapOutlet" destination="fev-90-Eu7" id="xJw-AN-O5J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TyN-mL-7TR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750" y="255"/>
         </scene>
         <!--New Meetup View Controller-->
         <scene sceneID="Mnp-OC-Gbz">
