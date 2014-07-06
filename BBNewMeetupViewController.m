@@ -8,6 +8,7 @@
 
 #import "BBNewMeetupViewController.h"
 
+
 @interface BBNewMeetupViewController () {
 //CLLocationManager allows us to get our location
 //Geocoder & placemark allow us to convert GPS coordinates into user-readable address
@@ -51,6 +52,7 @@ CLPlacemark *placemark;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [locationManager startUpdatingLocation];
+    [self setupNewEvent];
 }
 
 -(void)locationManager:(CLLocationManager *)manager
@@ -75,7 +77,7 @@ CLPlacemark *placemark;
                                      initWithMeetingName:meetingName
                                      withLocationName:locationName
                                      withStartDate:[NSDate date]
-                                     withEndDate:[NSDate date]
+                                     withEndDate:[[NSDate date] dateByAddingTimeInterval:60*60]
                                      withLatidue:latitudeLocation
                                      withLongitude:longitudeLocation];
     [BBMeetupLocation sendLocationToParse:newLocation];
@@ -96,8 +98,6 @@ CLPlacemark *placemark;
         self.latitudeValueLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         
         [self createLocationObject:currentLocation];
-        
-        
     }
     
     //Stop LocationManager
@@ -115,4 +115,21 @@ CLPlacemark *placemark;
         }
     }];
 }
+
+-(void)setupNewEvent{
+    EKEventStore *store = [[EKEventStore alloc] init];
+    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        if (!granted) { return; }
+        EKEvent *event = [EKEvent eventWithEventStore:store];
+        event.title = self.meetupName.text;
+        event.location = self.locationName.text;
+        event.startDate = [NSDate date]; //today
+        event.endDate = [event.startDate dateByAddingTimeInterval:60*60];  //set 1 hour meeting
+        [event setCalendar:[store defaultCalendarForNewEvents]];
+        NSError *err = nil;
+        [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+        //NSString *savedEventId = event.eventIdentifier;  //this is so you can access this event later
+    }];
+}
+
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "BBMeetupLocation.h"
+#import <EventKitUI/EventKitUI.h>
 
 @interface BBNewMeetupViewController : UIViewController <CLLocationManagerDelegate>
 
