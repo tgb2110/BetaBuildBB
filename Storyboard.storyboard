@@ -4,42 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Demo Main View Controller-->
-        <scene sceneID="MpS-Pb-JbX">
-            <objects>
-                <viewController id="HVG-dj-5yL" customClass="BBDemoMainViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PSR-KQ-LmH"/>
-                        <viewControllerLayoutGuide type="bottom" id="AA1-vP-HvV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vvS-Vq-gvg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9pX-bo-pzu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="523"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfR-3g-uhp">
-                                <rect key="frame" x="268" y="531" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="back:" destination="HVG-dj-5yL" eventType="touchUpInside" id="Q2p-Fe-mnb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LgI-9Q-43a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="493" y="-366"/>
-        </scene>
         <!--Login Root View Controller-->
         <scene sceneID="g5U-MX-3RZ">
             <objects>
@@ -101,16 +65,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="uKW-Xd-Mp2" kind="modal" id="q3z-Iw-OXB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrU-cQ-Ihu">
-                                <rect key="frame" x="137" y="145" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Demo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="HVG-dj-5yL" kind="modal" id="1Gu-XE-V9k"/>
                                 </connections>
                             </button>
                         </subviews>
