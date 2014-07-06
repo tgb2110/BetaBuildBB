@@ -31,6 +31,7 @@
 		3B923366196865460037BA47 /* BBAllMeetupsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B923365196865460037BA47 /* BBAllMeetupsTableViewController.m */; };
 		3B923369196865560037BA47 /* BBNewMeetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B923368196865560037BA47 /* BBNewMeetupViewController.m */; };
 		3B923375196866810037BA47 /* BBMeetupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B923373196866810037BA47 /* BBMeetupCell.m */; };
+		3BD4834F1968FDFF00299405 /* BeeMapIcon32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD4834E1968FDFF00299405 /* BeeMapIcon32.png */; };
 		91E72CDBE84E42BDAC6F181B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E94057B3393E422194634168 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		3B923368196865560037BA47 /* BBNewMeetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBNewMeetupViewController.m; path = ../BBNewMeetupViewController.m; sourceTree = "<group>"; };
 		3B923372196866810037BA47 /* BBMeetupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMeetupCell.h; sourceTree = "<group>"; };
 		3B923373196866810037BA47 /* BBMeetupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMeetupCell.m; sourceTree = "<group>"; };
+		3BD4834E1968FDFF00299405 /* BeeMapIcon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeeMapIcon32.png; sourceTree = "<group>"; };
 		B2FBE3E1967446B38889EE65 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E94057B3393E422194634168 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				3B92335F196865070037BA47 /* Views */,
 				3B92335D196864F20037BA47 /* Controllers */,
 				3B92333B19685E050037BA47 /* Images.xcassets */,
+				3BD4834D1968FDE300299405 /* Resources */,
 				3B92333019685E050037BA47 /* Supporting Files */,
 			);
 			path = BetaBuildBB;
@@ -226,6 +229,14 @@
 				3B3021DD19687775007B679C /* BBMeetupLocation.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		3BD4834D1968FDE300299405 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3BD4834E1968FDFF00299405 /* BeeMapIcon32.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 				3B3021DB19687585007B679C /* BBMeetupCell.xib in Resources */,
 				3B92333C19685E050037BA47 /* Images.xcassets in Resources */,
 				3B92335919685E830037BA47 /* Storyboard.storyboard in Resources */,
+				3BD4834F1968FDFF00299405 /* BeeMapIcon32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

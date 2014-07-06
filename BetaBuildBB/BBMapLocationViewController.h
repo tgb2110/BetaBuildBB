@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "BBMeetupLocation.h"
 
-@interface BBMapLocationViewController : UIViewController
+@interface BBMapLocationViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapOutlet;
 @property (strong, nonatomic) BBMeetupLocation *locationToBeParsed;

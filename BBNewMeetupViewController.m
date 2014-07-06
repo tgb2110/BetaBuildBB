@@ -118,8 +118,10 @@ CLPlacemark *placemark;
 
 -(void)setupNewEvent{
     EKEventStore *store = [[EKEventStore alloc] init];
-    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-        if (!granted) { return; }
+    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error)
+    {
+        if (!granted) { return;
+        }
         EKEvent *event = [EKEvent eventWithEventStore:store];
         event.title = self.meetupName.text;
         event.location = self.locationName.text;

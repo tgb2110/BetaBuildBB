@@ -11,7 +11,7 @@
 #import "BBMeetupLocation.h"
 #import "BBMeetupCell.h"
 
-@interface BBMapTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface BBMapTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

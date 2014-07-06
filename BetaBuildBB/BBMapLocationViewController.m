@@ -27,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.mapOutlet.delegate = self;
 
     double latitudeDouble =[self.locationToBeParsed.latitude doubleValue];
     double longitudeDouble = [self.locationToBeParsed.longitude doubleValue];
@@ -58,11 +60,6 @@
     point.title = self.locationToBeParsed.meetingName;
     point.subtitle = self.locationToBeParsed.locationName;
     [self.mapOutlet addAnnotation:point];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 /*

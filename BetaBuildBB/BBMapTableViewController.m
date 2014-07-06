@@ -29,6 +29,7 @@
     _currentUser = [PFUser currentUser];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _mapOutlet.delegate = self;
     _titleField.text = [NSString stringWithFormat:@"%@'s meetings",self.currentUser.username];
     
     _meetupsArray = [NSArray new];
@@ -84,8 +85,6 @@
     
     cell.detailTextLabel.text = location.objectId;
     
-    // Configure the cell...
-    
     return cell;
 }
 
@@ -120,8 +119,8 @@
     MKCoordinateRegion region;
     region.center.latitude = self.coordinate.coordinate.latitude;
     region.center.longitude = self.coordinate.coordinate.longitude;
-    region.span.latitudeDelta = .5;
-    region.span.longitudeDelta = .5;
+    region.span.latitudeDelta = .005;
+    region.span.longitudeDelta = .005;
     
     [self.mapOutlet setRegion:region animated:YES];
     
@@ -136,6 +135,23 @@
     point.title = self.locationToBeParsed.meetingName;
     point.subtitle = self.locationToBeParsed.locationName;
     [self.mapOutlet addAnnotation:point];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    MKAnnotationView *pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+    pinView.canShowCallout = YES;
+    pinView.image = [UIImage imageNamed:@"BeeMapIcon32.png"];
+    pinView.calloutOffset = CGPointMake(0, 0);
+    
+    // Add a detail disclosure button to the callout.
+    UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    pinView.rightCalloutAccessoryView = rightButton;
+    
+    // Add an image to the left callout.
+    UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BeeMapIcon32.png"]];
+    pinView.leftCalloutAccessoryView = iconView;
+    return pinView;
 }
 
 /*
