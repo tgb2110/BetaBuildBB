@@ -13,6 +13,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self.window makeKeyAndVisible];
     // BetaBuildBB App ID and Client ID
     [Parse setApplicationId:@"7tNCkeRoWa6aKUk9Sqp7Ov2ysHkIaiTIhTcHjijr"
                   clientKey:@"wr2k1cENCqWqBqNcwXcNmIF4UFl9iA69z55RnATj"];

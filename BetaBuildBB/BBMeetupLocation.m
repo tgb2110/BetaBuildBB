@@ -11,7 +11,12 @@
 @implementation BBMeetupLocation
 - (instancetype)init
 {
-    return [self initWithMeetingName:@"" withLocationName:@"" withStartDate:[NSDate date] withEndDate:[NSDate date] withLatidue:@0 withLongitude:@0];
+    return [self initWithMeetingName:@""
+                    withLocationName:@""
+                       withStartDate:[NSDate date]
+                         withEndDate:[NSDate date]
+                         withLatidue:@0
+                       withLongitude:@0];
 }
 
 -(instancetype)initWithMeetingName:(NSString *)meetingName
@@ -28,7 +33,6 @@
         _endDate = endDate;
         _latitude = latitude;
         _longitude = longitude;
-        
     }
     return self;
     

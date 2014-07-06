@@ -27,9 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    
+
     double latitudeDouble =[self.locationToBeParsed.latitude doubleValue];
     double longitudeDouble = [self.locationToBeParsed.longitude doubleValue];
     
@@ -37,14 +35,10 @@
     
     [self updateMapView:self.coordinate];
     [self plotLocationPin];
-    
-    
-    
-    // Do any additional setup after loading the view.
 }
 
-- (void)updateMapView:(CLLocation *)location {
-    
+- (void)updateMapView:(CLLocation *)location
+{
     // create a region and pass it to the Map View
     MKCoordinateRegion region;
     region.center.latitude = self.coordinate.coordinate.latitude;
@@ -55,8 +49,8 @@
     [self.mapOutlet setRegion:region animated:YES];
     
 }
--(void)plotLocationPin {
-    
+-(void)plotLocationPin
+{
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     double latitudeDouble = [self.locationToBeParsed.latitude doubleValue];
     double longitudeDouble = [self.locationToBeParsed.longitude doubleValue];
@@ -69,7 +63,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

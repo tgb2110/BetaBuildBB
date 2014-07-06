@@ -26,7 +26,8 @@
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated {
+-(void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
     
     EKEventStore *eventStore = [[EKEventStore alloc] init];
@@ -65,7 +66,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action{
+- (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action
+{
     
     
     switch (action)
@@ -88,7 +90,8 @@
     
 }
 
--(void)captureEventAndParse {
+-(void)captureEventAndParse
+{
     
     NSString *futureMeetupName = self.futureMeetup.title;
     NSString *futureMeetupLocationName = self.futureMeetup.location;

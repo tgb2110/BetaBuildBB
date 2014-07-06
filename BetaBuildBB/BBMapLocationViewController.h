@@ -13,7 +13,6 @@
 @interface BBMapLocationViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapOutlet;
-
 @property (strong, nonatomic) BBMeetupLocation *locationToBeParsed;
 @property (nonatomic) CLLocation *coordinate;
 

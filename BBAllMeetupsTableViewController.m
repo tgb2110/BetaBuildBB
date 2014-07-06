@@ -92,7 +92,8 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return 171;
 }
 
@@ -143,7 +144,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
     BBMapLocationViewController *newVC = segue.destinationViewController;
     
     NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
@@ -157,7 +157,6 @@
                                                withEndDate:currentObject[@"endDate"]
                                                withLatidue:currentObject[@"latitudeValue"]
                                                withLongitude:currentObject[@"longitudeValue"]];
-    
     newVC.locationToBeParsed = locationTobeDisplayed;
 }
 
