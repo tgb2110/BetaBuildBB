@@ -9,9 +9,11 @@
 #import "BBMeetupLocation.h"
 
 @implementation BBMeetupLocation
+
 - (instancetype)init
 {
-    return [self initWithMeetingName:@""
+    return [self initWithUserPointer:@""
+                         MeetingName:@""
                     withLocationName:@""
                        withStartDate:[NSDate date]
                          withEndDate:[NSDate date]
@@ -19,7 +21,8 @@
                        withLongitude:@0];
 }
 
--(instancetype)initWithMeetingName:(NSString *)meetingName
+-(instancetype)initWithUserPointer:(NSString *)userPointer
+                       MeetingName:(NSString *)meetingName
                   withLocationName:(NSString *)locationName
                      withStartDate:(NSDate *)startDate
                        withEndDate:(NSDate *)endDate
@@ -27,6 +30,7 @@
                      withLongitude:(NSNumber *)longitude {
     self = [super init];
     if (self) {
+        _userPointer = userPointer;
         _meetingName = meetingName;
         _locationName = locationName;
         _startDate = startDate;
@@ -51,6 +55,7 @@
     locationToStore[@"endDate"] = newLocation.endDate;
     locationToStore[@"longitudeValue"] = newLocation.longitude;
     locationToStore[@"latitudeValue"] = newLocation.latitude;
+    locationToStore[@"userPointer"] = newLocation.userPointer;
     
     [locationToStore saveInBackground];
     

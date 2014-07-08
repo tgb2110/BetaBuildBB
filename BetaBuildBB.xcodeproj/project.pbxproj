@@ -13,6 +13,7 @@
 		3B3021E21968853A007B679C /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3021E11968853A007B679C /* EventKitUI.framework */; };
 		3B3021E819689B51007B679C /* BBMapLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3021E719689B51007B679C /* BBMapLocationViewController.m */; };
 		3B3021F01968AE01007B679C /* BBMapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3021EF1968AE01007B679C /* BBMapTableViewController.m */; };
+		3B6EBC31196C60D80042A09E /* BBAllOneMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6EBC30196C60D80042A09E /* BBAllOneMapViewController.m */; };
 		3B92332A19685E050037BA47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B92332919685E050037BA47 /* Foundation.framework */; };
 		3B92332C19685E050037BA47 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B92332B19685E050037BA47 /* CoreGraphics.framework */; };
 		3B92332E19685E050037BA47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B92332D19685E050037BA47 /* UIKit.framework */; };
@@ -55,6 +56,8 @@
 		3B3021E719689B51007B679C /* BBMapLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMapLocationViewController.m; sourceTree = "<group>"; };
 		3B3021EE1968AE01007B679C /* BBMapTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBMapTableViewController.h; sourceTree = "<group>"; };
 		3B3021EF1968AE01007B679C /* BBMapTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBMapTableViewController.m; sourceTree = "<group>"; };
+		3B6EBC2F196C60D80042A09E /* BBAllOneMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAllOneMapViewController.h; sourceTree = "<group>"; };
+		3B6EBC30196C60D80042A09E /* BBAllOneMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAllOneMapViewController.m; sourceTree = "<group>"; };
 		3B92332619685E050037BA47 /* BetaBuildBB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetaBuildBB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B92332919685E050037BA47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3B92332B19685E050037BA47 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -198,6 +201,8 @@
 			children = (
 				3B3021EE1968AE01007B679C /* BBMapTableViewController.h */,
 				3B3021EF1968AE01007B679C /* BBMapTableViewController.m */,
+				3B3021E619689B51007B679C /* BBMapLocationViewController.h */,
+				3B3021E719689B51007B679C /* BBMapLocationViewController.m */,
 				3B92335A196861300037BA47 /* BBLoginRootViewController.h */,
 				3B92335B196861300037BA47 /* BBLoginRootViewController.m */,
 				3B923361196865340037BA47 /* BBFutureMeetupViewController.h */,
@@ -206,8 +211,8 @@
 				3B923365196865460037BA47 /* BBAllMeetupsTableViewController.m */,
 				3B923367196865560037BA47 /* BBNewMeetupViewController.h */,
 				3B923368196865560037BA47 /* BBNewMeetupViewController.m */,
-				3B3021E619689B51007B679C /* BBMapLocationViewController.h */,
-				3B3021E719689B51007B679C /* BBMapLocationViewController.m */,
+				3B6EBC2F196C60D80042A09E /* BBAllOneMapViewController.h */,
+				3B6EBC30196C60D80042A09E /* BBAllOneMapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 			files = (
 				3B3021F01968AE01007B679C /* BBMapTableViewController.m in Sources */,
 				3B92335C196861300037BA47 /* BBLoginRootViewController.m in Sources */,
+				3B6EBC31196C60D80042A09E /* BBAllOneMapViewController.m in Sources */,
 				3B923375196866810037BA47 /* BBMeetupCell.m in Sources */,
 				3B3021DE19687775007B679C /* BBMeetupLocation.m in Sources */,
 				3B92333A19685E050037BA47 /* BBAppDelegate.m in Sources */,

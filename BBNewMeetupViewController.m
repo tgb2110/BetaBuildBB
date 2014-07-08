@@ -74,7 +74,8 @@ CLPlacemark *placemark;
     NSString *locationName = self.locationName.text;
     
     BBMeetupLocation *newLocation = [[BBMeetupLocation alloc]
-                                     initWithMeetingName:meetingName
+                                     initWithUserPointer:[PFUser currentUser].objectId
+                                     MeetingName:meetingName
                                      withLocationName:locationName
                                      withStartDate:[NSDate date]
                                      withEndDate:[[NSDate date] dateByAddingTimeInterval:60*60]

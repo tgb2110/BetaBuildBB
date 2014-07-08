@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import <EventKitUI/EventKitUI.h>
 
-@interface BBFutureMeetupViewController : UIViewController <EKEventEditViewDelegate>
+@interface BBFutureMeetupViewController : UIViewController <EKEventEditViewDelegate, CLLocationManagerDelegate>
+
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @end

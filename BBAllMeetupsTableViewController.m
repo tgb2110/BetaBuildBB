@@ -151,7 +151,8 @@
     PFObject *currentObject = self.meetupsArray[ip.row];
     
     BBMeetupLocation *locationTobeDisplayed = [[BBMeetupLocation alloc]
-                                               initWithMeetingName:currentObject[@"meetingName"]
+                                               initWithUserPointer:currentObject[@"userPointer"]
+                                               MeetingName:currentObject[@"meetingName"]
                                                withLocationName:currentObject[@"locationName"]
                                                withStartDate:currentObject[@"startDate"]
                                                withEndDate:currentObject[@"endDate"]

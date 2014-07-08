@@ -92,7 +92,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PFObject *location = self.meetupsArray[indexPath.row];
-    self.locationToBeParsed = [[BBMeetupLocation alloc]initWithMeetingName:location[@"meetingName"]
+    self.locationToBeParsed = [[BBMeetupLocation alloc]initWithUserPointer:location[@"userPointer"]
+                                                               MeetingName:location[@"meetingName"]
                                                           withLocationName:location[@"locationName"]
                                                              withStartDate:location[@"startDate"]
                                                                withEndDate:location[@"endDate"]

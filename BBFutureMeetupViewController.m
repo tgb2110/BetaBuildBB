@@ -9,7 +9,11 @@
 #import "BBFutureMeetupViewController.h"
 #import "BBMeetupLocation.h"
 
-@interface BBFutureMeetupViewController ()
+@interface BBFutureMeetupViewController () {
+    CLLocationManager *locationManager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+}
 
 @property (strong, nonatomic) EKEvent *futureMeetup;
 
@@ -56,6 +60,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
     // Do any additional setup after loading the view.
 
 }
@@ -85,6 +93,7 @@
             break;
     }
     [self captureEventAndParse];
+    [locationManager stopUpdatingLocation];
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.navigationController popViewControllerAnimated:YES];
     
@@ -92,6 +101,7 @@
 
 -(void)captureEventAndParse
 {
+    // SET PROPERTY CURRENT LOCATION TO CURRENT LOCATION
     
     NSString *futureMeetupName = self.futureMeetup.title;
     NSString *futureMeetupLocationName = self.futureMeetup.location;
@@ -100,28 +110,43 @@
     
     //  should take current lat long and save for use when creating meetupLocation
     
+    NSNumber *meetingLatitude = [NSNumber numberWithDouble:self.currentLocation.coordinate.latitude];
+    NSNumber *meetingLongitude = [NSNumber numberWithDouble:self.currentLocation.coordinate.longitude];
+    
     BBMeetupLocation *futureMeetupLocation = [[BBMeetupLocation alloc]
-                                              initWithMeetingName:futureMeetupName
+                                              initWithUserPointer:[PFUser currentUser].objectId
+                                              MeetingName:futureMeetupName
                                               withLocationName:futureMeetupLocationName
                                               withStartDate:futureMeetupStartDate
                                               withEndDate:futureMeetupEndDate
-                                              withLatidue:@0
-                                              withLongitude:@0];
+                                              withLatidue:meetingLatitude
+                                              withLongitude:meetingLongitude];
     
     [BBMeetupLocation sendLocationToParse:futureMeetupLocation];
     
     NSLog(@"%@",self.futureMeetup);
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)locationManager:(CLLocationManager *)manager
+      didFailWithError:(NSError *)error
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //Error message
+    NSLog(@"didFailWithError: %@", error);
+    
+    //Error alertView
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
 }
-*/
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation
+{
+    self.currentLocation = newLocation;
+    //Stop LocationManager
+    [locationManager stopUpdatingLocation];
+}
+
 
 @end
+
